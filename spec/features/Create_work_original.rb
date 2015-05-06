@@ -1,4 +1,4 @@
-require '../spec_helper.rb'
+require 'spec_helper'
 
 feature 'Create work original' do
 	
@@ -9,8 +9,8 @@ feature 'Create work original' do
 	        fill_in 'title', :with => 'The Raven'
 	        fill_in 'work-creator', :with => 'Edgar Allan Poe'
 	        find('input[type="submit"][name=""]').click
-		page.should have_content 'The Raven'
-		page.should have_content 'Edgar Allan Poe'
+		expect(page).to have_content 'The Raven'
+		expect(page).to have_content 'Edgar Allan Poe'
 
 	end
 
